@@ -1,0 +1,12 @@
+{
+    "name": "imtiazepu/xpeedstudio",
+    "description": "Simple form submission script with frontend validation",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Imtiaz Epu",
+            "email": "info@imtiazepu.com"
+        }
+    ],
+    "require": {}
+}

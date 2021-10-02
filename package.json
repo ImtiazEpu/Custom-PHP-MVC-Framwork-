@@ -1,0 +1,20 @@
+{
+  "name": "xpeedstudio",
+  "version": "1.0.0",
+  "description": "Simple form submission script with frontend validation",
+  "main": "index.js",
+  "repository": "https://github.com/ImtiazEpu/xpeedstudio.git",
+  "author": "Imtiaz Epu <info@imtiazepu.com>",
+  "license": "MIT",
+  "dependencies": {
+    "intl-tel-input": "^17.0.13",
+    "jquery": "^3.6.0",
+    "laravel-mix": "^6.0.31",
+    "milligram": "^1.4.1"
+  },
+  "devDependencies": {
+    "resolve-url-loader": "^4.0.0",
+    "sass": "^1.42.1",
+    "sass-loader": "^12.1.0"
+  }
+}
