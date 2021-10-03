@@ -2,9 +2,9 @@
 
 namespace App\Controllers;
 
-class HomeController {
+class ReportController {
 
 	public function getIndex() {
-		return "Home Page";
+		view('report');
 	}
 }
