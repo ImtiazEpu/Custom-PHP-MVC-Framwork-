@@ -1,5 +1,7 @@
 <?php
 
+use App\Controllers\HomeController;
+use App\Controllers\UserController;
 use Phroute\Phroute\Dispatcher;
 use Phroute\Phroute\Exception\HttpMethodNotAllowedException;
 use Phroute\Phroute\Exception\HttpRouteNotFoundException;
@@ -10,9 +12,8 @@ require_once "vendor/autoload.php";
 
 $router = new RouteCollector( new RouteParser() );
 
-$router->post( '/', function () {
-	return "Hello from PHRoute";
-} );
+$router->controller( '/', UserController::class);
+$router->controller( '/reports', HomeController::class);
 
 $dispatcher = new Dispatcher( $router->getData() );
 
