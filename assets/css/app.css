@@ -7,6 +7,9 @@
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .iti__flag {background-image: url("../../node_modules/intl-tel-input/build/img/flags@2x.png");}
 }
+.d-none{
+    display: none;
+}
 .alert {
     position: relative;
     padding: .75rem 1.25rem;

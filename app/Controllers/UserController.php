@@ -13,13 +13,11 @@ class UserController {
 		view( "home" );
 	}
 
-	public function postIndex( ) {
-
-
+	public function store() {
 		//Local Timezone
-		$dt = new DateTime("now", new DateTimeZone('Asia/Dhaka'));
+		$dt = new DateTime( "now", new DateTimeZone( 'Asia/Dhaka' ) );
 
-		$validator = new Validator();
+		$validator   = new Validator();
 		$error       = [];
 		$amount      = $_POST['amount'];
 		$buyer       = $_POST['buyer'];
@@ -31,10 +29,14 @@ class UserController {
 		$city        = $_POST['city'];
 		$phone       = $_POST['phone'];
 		$hash_key    = hash( 'sha512', $receipt_id );
-		$entry_at    = $dt->format('Y-m-d H:i:s');;
+		$entry_at    = $dt->format( 'Y-m-d H:i:s' );
 		$entry_by    = $_POST['entry_by'];
 
 		//Validation
+		if ( empty( $amount ) || empty( $buyer ) || empty( $receipt_id ) || empty( $items ) || empty( $buyer_email ) || empty( $note ) || empty( $city ) || empty
+			( $phone ) || empty( $entry_by ) ) {
+			return json_encode( array( "empty_field" => true, "msg" => 'errors' ) );
+		}
 		if ( $validator::number()->validate( $amount ) === false ) {
 			$error['amount'] = "Amount field allow only number";
 		}
@@ -44,7 +46,7 @@ class UserController {
 		if ( $validator::alpha()->validate( $receipt_id ) === false ) {
 			$error['receipt_id'] = "Receipt ID field allow only text";
 		}
-		if ( $validator::alpha(',' ,' ')->validate( $items ) === false ) {
+		if ( $validator::alpha( ',', ' ' )->validate( $items ) === false ) {
 			$error['items'] = "Items field allow only text";
 		}
 		if ( $validator::email()->validate( $buyer_email ) === false ) {
@@ -57,16 +59,15 @@ class UserController {
 		if ( $validator::alpha( ' ' )->validate( $city ) === false ) {
 			$error['city'] = "City field allow only text and space";
 		}
-		if ( $validator::phone()->validate( $phone ) === false ) {
+		if ( $validator::number()->validate( $phone ) === false ) {
 			$error['phone'] = "Phone filed allow only valid phone number";
 		}
 		if ( $validator::number()->validate( $entry_by ) === false ) {
 			$error['entry_by'] = "Only number are allow";
 		}
 
-
 		if ( empty( $error ) ) {
-			Buyer::create( [
+			$buyer = Buyer::create( [
 				'amount'      => $amount,
 				'buyer'       => $buyer,
 				'receipt_id'  => $receipt_id,
@@ -80,11 +81,16 @@ class UserController {
 				'entry_at'    => $entry_at,
 				'entry_by'    => $entry_by,
 			] );
+			if ( $buyer ) {
+				return json_encode( array( "success" => true, 'msg' => 'success' ) );
+			} else {
+				return json_encode( array( "errors" => false, "msg" => 'errors' ) );
+			}
 
-			$_SESSION['success'] = "Form Successfully Submitted";
-			header('Location: /reports');
+		} else {
+			return json_encode( array( "validation_error" => true, "msg" => $error ) );
 		}
-		$_SESSION['errors'] = $error;
-		header('Location: /');
+
 	}
+
 }

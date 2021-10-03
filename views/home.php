@@ -5,7 +5,7 @@
                 <h1>XpeedStudio Assignment</h1>
                 <p>Simple PHP form submission script with frontend validation </p>
 				<?php require_once "partials/_notifications.php";?>
-                <form method="post" action="">
+                <form id="buyer_from">
                     <fieldset>
                         <div class="container">
                             <div class="row">
@@ -31,7 +31,7 @@
                             <div class="row">
                                 <div class="column">
                                     <label for="itemsField">Items</label>
-                                    <input type="text" name="items" placeholder="Items" id="itemsField">
+                                    <input type="text" class="form-control" name="items" placeholder="Items" id="itemsField">
                                 </div>
                                 <div class="column">
                                     <label for="receiptField">Receipt ID</label>

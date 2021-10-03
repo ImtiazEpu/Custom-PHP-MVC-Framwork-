@@ -8,6 +8,7 @@
 
 	<!-- Milligram CSS -->
 	<link rel="stylesheet" href="node_modules/intl-tel-input/build/css/intlTelInput.css">
+	<link rel="stylesheet" href="node_modules/suggestags/css/amsify.suggestags.css">
 	<link rel="stylesheet" href="assets/css/milligram.css">
 	<link rel="stylesheet" href="assets/css/app.css">
 
