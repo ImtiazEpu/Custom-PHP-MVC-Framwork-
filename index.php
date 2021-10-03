@@ -7,9 +7,8 @@ use Phroute\Phroute\RouteCollector;
 use Phroute\Phroute\RouteParser;
 
 require_once "vendor/autoload.php";
-
+session_start();
 require_once __DIR__ . "/database/connection.php";
-
 
 $router = new RouteCollector( new RouteParser() );
 
