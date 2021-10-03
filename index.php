@@ -1,6 +1,5 @@
 <?php
-use App\Controllers\HomeController;
-use App\Controllers\UserController;
+
 use Phroute\Phroute\Dispatcher;
 use Phroute\Phroute\Exception\HttpMethodNotAllowedException;
 use Phroute\Phroute\Exception\HttpRouteNotFoundException;
@@ -9,10 +8,12 @@ use Phroute\Phroute\RouteParser;
 
 require_once "vendor/autoload.php";
 
+require_once __DIR__ . "/database/connection.php";
+
+
 $router = new RouteCollector( new RouteParser() );
 
-$router->controller( '/', UserController::class);
-$router->controller( '/reports', HomeController::class);
+require_once __DIR__ . "/routes/web.php";
 
 $dispatcher = new Dispatcher( $router->getData() );
 
@@ -21,10 +22,8 @@ try {
 } catch ( HttpRouteNotFoundException $e ) {
 	echo $e->getMessage();
 	die();
-}catch (HttpMethodNotAllowedException $e){
+} catch ( HttpMethodNotAllowedException $e ) {
 	echo $e->getMessage();
 	die();
 }
-
-
 echo $response;
