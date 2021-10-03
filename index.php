@@ -1,5 +1,4 @@
 <?php
-
 use App\Controllers\HomeController;
 use App\Controllers\UserController;
 use Phroute\Phroute\Dispatcher;

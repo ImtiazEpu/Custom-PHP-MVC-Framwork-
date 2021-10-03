@@ -1,5 +1,5 @@
 let input = document.querySelector("#phoneField");
-var iti   = window.intlTelInput(input, {
+let iti   = window.intlTelInput(input, {
     // any initialisation options go here
     initialCountry: "auto",
     geoIpLookup: function (callback) {

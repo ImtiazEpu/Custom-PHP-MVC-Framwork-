@@ -1,4 +1,4 @@
-<?php require_once "partials/_header.php";  ?>
+<?php partials_view('_header');  ?>
 	<div class="container">
 		<div class="row">
 			<div class="column column-60 column-offset-20">
@@ -62,4 +62,4 @@
 	</div>
 
 <?php
-require_once "partials/_footer.php";
+partials_view('_footer');

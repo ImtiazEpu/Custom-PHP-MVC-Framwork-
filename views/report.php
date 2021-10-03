@@ -1,5 +1,5 @@
 <?php
-require_once "partials/_header.php";
+partials_view('_header');
 ?>
 <div class="container">
     <div class="row">
@@ -37,5 +37,5 @@ require_once "partials/_header.php";
         </div>
     </div>
 </div>
-
-<?php require_once "partials/_footer.php";
+<?php
+partials_view('_footer');
