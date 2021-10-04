@@ -12,7 +12,7 @@ partials_view( '_header' );
 
 					<?php require_once "partials/_notifications.php"; ?>
 					<?php if ( count($buyers) > 0 ): ?>
-                        <form action="/reports" method="POST">
+                        <form action="./reports" method="POST">
                             <div class="row">
                                 <div class="column">
                                     <label for="from">From</label>

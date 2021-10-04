@@ -163,7 +163,7 @@ $('#buyer_from').on('submit', function (event) {
     }
     if (!error) {
         $.ajax({
-            url: '/',
+            url: './',
             method: "POST",
             data: new FormData(this),
             contentType: false,
@@ -194,7 +194,7 @@ $('#buyer_from').on('submit', function (event) {
                     document.getElementById("buyer_from").reset();
                     setTimeout(function () {
                         $('#alert-errors').hide().html(html);
-                        window.location.href = "/reports";
+                        window.location.href = "./reports";
                     }, 4000);//wait 3 seconds
                 }
                 if (data.errors === false) {

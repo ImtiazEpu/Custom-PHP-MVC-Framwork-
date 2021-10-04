@@ -8,7 +8,8 @@ use Phroute\Phroute\RouteParser;
 
 require_once "vendor/autoload.php";
 session_start();
-const BASE_URL = 'http://xpeedstudio.test';
+//for xammp add your project folder name
+const BASE_URL = 'xpeedstudio';
 require_once __DIR__ . "/database/connection.php";
 
 $router = new RouteCollector( new RouteParser() );
