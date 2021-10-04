@@ -19,9 +19,10 @@ Simple PHP form submission script with frontend validation
 - Run `composer install`
 - Run `npm install` or `yarn install`
 - Create a database and import the `.sql` file from `database/sql` folder.
-- This project is built on `Laravel Valet` Server. It will run on both `Valet` and `XAMMP` servers. 
+- This project is built on `Laravel Valet` Server. It will run on both `Valet` and `XAMMP` servers.
+- Run the project 😀
 ### For Laravel Valet
-- To run this project on The `Laravel Valet` server you just need to remove the project folder name from BASE_URL on the `index.php` file. Example: `const BASE_URL = '';`.
-
+- To run this project on the `Laravel Valet` server you just need to remove the project folder name from BASE_URL on 
+  the `index.php` file. Example: `const BASE_URL = '';`.
 
 
