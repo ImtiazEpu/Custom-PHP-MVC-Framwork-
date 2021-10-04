@@ -10,7 +10,6 @@
     "font-awesome": "4.7.0",
     "intl-tel-input": "^17.0.13",
     "jquery": "^3.6.0",
-    "jquery-validation": "^1.19.3",
     "laravel-mix": "^6.0.31",
     "milligram": "^1.4.1",
     "suggestags": "^1.27.0"
