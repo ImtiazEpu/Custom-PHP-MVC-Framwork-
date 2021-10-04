@@ -19,4 +19,11 @@ Simple PHP form submission script with frontend validation
 - Run `composer install`
 - Run `yarn install`
 - Create a database and import the `.sql` file from `database/sql` folder.
-- 
+- Server user `laravel Valet`. For `Valet` you just need run `xpeedstudio.your-tld`
+- For `Xamp` base url will be `/folder_name`
+- .htaccess for apache server`RewriteEngine On
+  RewriteBase /folder_name/
+  RewriteRule ^index\.php$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /folder_name/index.php [L]`
