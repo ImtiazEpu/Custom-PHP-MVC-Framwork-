@@ -1,7 +1,7 @@
 <?php partials_view( '_header' ); ?>
     <div class="container">
         <div class="row">
-            <div class="column column-60 column-offset-20">
+            <div class="column">
                 <h1>XpeedStudio Assignment</h1>
                 <p>Simple PHP form submission script with frontend validation </p>
 				<?php require_once "partials/_notifications.php";?>

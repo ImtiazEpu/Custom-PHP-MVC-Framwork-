@@ -1,5 +1,5 @@
 .iti input[type=tel] {
-    padding-right: 90px !important;
+    padding-right: 315px !important;
 }
 
 .iti__flag {background-image: url("../../node_modules/intl-tel-input/build/img/flags.png");}
@@ -26,4 +26,27 @@
     color: #721c24;
     background-color: #f8d7da;
     border-color: #f5c6cb;
+}
+.amsify-focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+}
+.form-control{
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 0.1rem solid #d1d1d1;
+    border-radius: 0.4rem;
+    box-shadow: none;
+    box-sizing: inherit;
+    height: 3.8rem;
+    padding: 0.6rem 1rem 0.7rem;
+    width: 100%;
+}
+.amsify-suggestags-area .amsify-suggestags-input-area .amsify-suggestags-input {
+    max-width: 70px !important;
+    padding: 0.6rem 1rem 0.7rem !important;
+    margin-bottom: -1em !important;
+    height: auto !important;
 }
