@@ -1,6 +1,7 @@
 <?php
 use App\Controllers\ReportController;
 use App\Controllers\UserController;
-$router->controller( '/', UserController::class);
+$router->get( '/', [UserController::class,'index']);
 $router->post( '/', [UserController::class,'store']);
-$router->controller( '/reports', ReportController::class);
+$router->get( '/reports', [ReportController::class,'index']);
+$router->post( '/reports', [ReportController::class,'filterData']);

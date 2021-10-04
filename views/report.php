@@ -1,42 +1,77 @@
 <?php
-partials_view('_header');
+partials_view( '_header' );
 ?>
-<div class="container">
-    <div class="row">
-        <div class="column">
-            <h1>XpeedStudio Assignment</h1>
-            <p>Simple PHP form submission script with frontend validation </p>
-	        <?php require_once "partials/_notifications.php";?>
-            <table>
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Amount</th>
-                    <th>Buyer</th>
-                    <th>Receipt ID</th>
-                    <th>Items</th>
-                    <th>Email</th>
-                    <th>Buyer IP</th>
-                    <th>Note</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Stephen Curry</td>
-                    <td>27</td>
-                    <td>1,91</td>
-                    <td>Akron, OH</td>
-                </tr>
-                <tr>
-                    <td>Klay Thompson</td>
-                    <td>25</td>
-                    <td>2,01</td>
-                    <td>Los Angeles, CA</td>
-                </tr>
-                </tbody>
-            </table>
+    <div class="reports">
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <h1>XpeedStudio Assignment</h1>
+                    <p>Simple PHP form submission script with frontend validation </p>
+
+					<?php $buyers = isset( $_SESSION['buyer_list'] ) ? $_SESSION['buyer_list'] : array() ?>
+
+					<?php require_once "partials/_notifications.php"; ?>
+					<?php if ( count($buyers) > 0 ): ?>
+                        <form action="/reports" method="POST">
+                            <div class="row">
+                                <div class="column">
+                                    <label for="from">From</label>
+                                    <input type="date" id="from" name="from" value="<?php echo date( 'Y-m-d' ) ?>">
+                                </div>
+                                <div class="column">
+                                    <label for="to">To</label>
+                                    <input type="date" id="to" name="to" value="<?php echo date( 'Y-m-d' ) ?>">
+                                </div>
+                                <div class="column button-warp">
+                                    <input type="submit" class="button" value="View">
+                                </div>
+                            </div>
+                        </form>
+                        <table style="width=100%">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Amount</th>
+                                <th>Buyer</th>
+                                <th>Receipt ID</th>
+                                <th>Items</th>
+                                <th>Email</th>
+                                <th>Buyer IP</th>
+                                <th>Note</th>
+                                <th>City</th>
+                                <th>Phone</th>
+                                <th>Entry at</th>
+                                <th>Entry by</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+							<?php foreach ( $buyers as $buyer ): ?>
+                                <tr>
+                                    <td><?php echo $buyer->id ?></td>
+                                    <td><?php echo $buyer->amount ?></td>
+                                    <td><?php echo $buyer->buyer ?></td>
+                                    <td><?php echo $buyer->receipt_id ?></td>
+                                    <td><?php echo $buyer->items ?></td>
+                                    <td><?php echo $buyer->buyer_email ?></td>
+                                    <td><?php echo $buyer->buyer_ip ?></td>
+                                    <td><?php echo $buyer->note ?></td>
+                                    <td><?php echo $buyer->city ?></td>
+                                    <td><?php echo $buyer->phone ?></td>
+                                    <td><?php echo $buyer->entry_at ?></td>
+                                    <td><?php echo $buyer->entry_by ?></td>
+                                </tr>
+							<?php endforeach; ?>
+                            </tbody>
+                        </table>
+					<?php else: ?>
+                        <div class="alert alert-info">
+                            No Buyer Found. Please <a class="" href="/">Add One</a>
+                        </div>
+					<?php endif; ?>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+
 <?php
-partials_view('_footer');
+partials_view( '_footer' );
