@@ -43,7 +43,7 @@
                             <div class="row">
                                 <div class="column input-control">
                                     <label for="itemsField">Items</label>
-                                    <input type="text" class="form-control" name="items" placeholder="Items" id="itemsField">
+                                    <input type="text" class="form-control" name="items" placeholder="Write & Hit Enter" id="itemsField">
                                     <i class="fa fa-check-circle"></i>
                                     <i class="fa fa-exclamation-circle"></i>
                                     <small>Error message</small>

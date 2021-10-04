@@ -7,26 +7,24 @@ partials_view( '_header' );
                 <div class="column">
                     <h1>XpeedStudio Assignment</h1>
                     <p>Simple PHP form submission script with frontend validation </p>
-
 					<?php $buyers = isset( $_SESSION['buyer_list'] ) ? $_SESSION['buyer_list'] : array() ?>
-
-					<?php require_once "partials/_notifications.php"; ?>
-					<?php if ( count($buyers) > 0 ): ?>
-                        <form action="./reports" method="POST">
-                            <div class="row">
-                                <div class="column">
-                                    <label for="from">From</label>
-                                    <input type="date" id="from" name="from" value="<?php echo date( 'Y-m-d' ) ?>">
-                                </div>
-                                <div class="column">
-                                    <label for="to">To</label>
-                                    <input type="date" id="to" name="to" value="<?php echo date( 'Y-m-d' ) ?>">
-                                </div>
-                                <div class="column button-warp">
-                                    <input type="submit" class="button" value="View">
-                                </div>
+	                <?php $dt          = new DateTime( "now", new DateTimeZone( 'Asia/Dhaka' ) );?>
+                    <form action="./reports" method="POST">
+                        <div class="row">
+                            <div class="column">
+                                <label for="from">From</label>
+                                <input type="date" id="from" name="from" value="<?php echo $dt->format( 'Y-m-d' ) ?>">
                             </div>
-                        </form>
+                            <div class="column">
+                                <label for="to">To</label>
+                                <input type="date" id="to" name="to" value="<?php echo $dt->format( 'Y-m-d' ) ?>">
+                            </div>
+                            <div class="column button-warp">
+                                <input type="submit" class="button" value="View">
+                            </div>
+                        </div>
+                    </form>
+					<?php if ( count( $buyers ) > 0 ): ?>
                         <table style="width=100%">
                             <thead>
                             <tr>

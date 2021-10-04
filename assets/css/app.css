@@ -50,7 +50,7 @@
     width: 100%;
 }
 .amsify-suggestags-area .amsify-suggestags-input-area .amsify-suggestags-input {
-    max-width: 70px !important;
+    max-width: 120px !important;
     padding: 0.6rem 1rem 0.7rem !important;
     margin-bottom: -1em !important;
     height: auto !important;
