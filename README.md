@@ -1,4 +1,4 @@
-## XpeedStudio Assignment
+## Custom PHP MVC FrameWork
 Simple PHP form submission script with frontend validation
 ## Inside
 * [laravel-mix](https://github.com/laravel-mix/laravel-mix)
