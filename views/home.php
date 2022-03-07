@@ -2,8 +2,8 @@
     <div class="container">
         <div class="row">
             <div class="column">
-                <h1>XpeedStudio Assignment</h1>
-                <p>Simple PHP form submission script with frontend validation </p>
+                <h1>Custom MVC Framework</h1>
+                <p>Simple PHP form submission script with frontend validation</p>
 				<?php require_once "partials/_notifications.php";?>
                 <form id="buyer_from">
                     <fieldset>
